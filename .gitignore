@@ -175,4 +175,7 @@ sketch
 .history
 .ionide
 
+frontend/package-lock.json
+backend/package-lock.json
+
 # End of https://www.toptal.com/developers/gitignore/api/react,node,visualstudiocode
