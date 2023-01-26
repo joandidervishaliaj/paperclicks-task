@@ -17,7 +17,7 @@ export const getUserDataGithub = async (accessToken) => {
 }
 
 
-export const getStarredReposGithub = async (accessToken, login, page) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_API_URL}/github/starred-repos?accessToken=${accessToken}&login=${login}&page=${page}`, configs);
+export const getStarredReposGithub = async (accessToken, login) => {
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_API_URL}/github/starred-repos?accessToken=${accessToken}&login=${login}`, configs);
     return data
 }

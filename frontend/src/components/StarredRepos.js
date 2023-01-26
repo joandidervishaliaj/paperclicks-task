@@ -10,15 +10,14 @@ export default function StarredRepos({ fetchData }) {
     const userDataGithub = JSON.parse(localStorage.getItem(USER_DATA));
 
     const [starredRepos, setStarredRepos] = useState([]);
-    const [page, setPage] = useState(1);
 
     useEffect(() => {
         if (fetchData) {
-            getStarredReposGithub(accessToken, userDataGithub.login, page).then((response) => {
+            getStarredReposGithub(accessToken, userDataGithub.login).then((response) => {
                 setStarredRepos(response);
             });
         }
-    }, [fetchData, accessToken, userDataGithub.login, page]);
+    }, [fetchData, accessToken, userDataGithub.login]);
 
     if (!fetchData) {
         return null;
@@ -72,7 +71,6 @@ export default function StarredRepos({ fetchData }) {
                 noMargin
                 align="center"
                 rowsPerPage={starredRepos.length >= 10 ? 10 : starredRepos.length}
-                onPageChange={(page) => setPage(page)}
             />
         </Table>
     );

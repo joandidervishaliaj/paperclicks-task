@@ -58,10 +58,9 @@ async function getStarredRepos(req, res) {
 	try {
 		const accessToken = req.query.accessToken;
 		const login = req.query.login;
-		const page = req.query.page;
 
 		axios
-			.get(`${process.env.GITHUB_API_URL}/users/${login}/starred?page=${page}`, {
+			.get(`${process.env.GITHUB_API_URL}/users/${login}/starred`, {
 				headers: {
 					Authorization: `Bearer ${accessToken}`,
 				},
